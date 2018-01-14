@@ -94,7 +94,15 @@ export class Game {
   }
 }
 
-class Client {
+export class Client {
+  gameState$: BehaviorSubject<State>
+  gameEnd$: Subject<State>
+  constructor(private game: Game) {
+    game.state$.subscribe(s => this.gameState$.next(s))
+    game.gameEnd$.subscribe(s => this.gameEnd$.next(s))
+  }
 
+  execCommand(cmd: string) {
+    this.game.execCommand(cmd)
+  }
 }
-
