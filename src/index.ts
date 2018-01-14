@@ -1,4 +1,3 @@
-import { routine } from './lib'
 import { Game } from './election'
 
 async function main() {

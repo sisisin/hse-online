@@ -1,0 +1,5 @@
+--recursive
+--require ts-node/register
+--require espower-typescript/guess
+--watch-extensions ts
+test/*.ts
